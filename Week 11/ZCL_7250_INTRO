@@ -1,0 +1,22 @@
+CLASS zcl_7250_intro DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+CLASS zcl_7250_intro IMPLEMENTATION.
+METHOD if_oo_adt_classrun~main.
+
+SELECT FROM /LRN/S4D430_IND_CDS_View
+    FIELDS *
+    INTO TABLE @DATA(result_cds).
+  out->write( name = 'From CDS View'
+              data = result_cds ).
+ENDMETHOD.
+ENDCLASS.
